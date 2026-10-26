@@ -1,9 +1,9 @@
 ﻿# BÀI LÀM – THI THỬ HACKATHON 02 (GAMEZONE)
 
-- **Họ tên:** 
-- **Lớp:** 
-- **Link repository:** 
-- **Hệ điều hành (Windows/macOS):** 
+- **Họ tên:** Nguyễn Văn Mạnh Tùng
+- **Lớp:** CNTT3
+- **Link repository:** https://github.com/nvmanhtung2008-boop
+- **Hệ điều hành (Windows/macOS):** PowerShell
 
 ## 4.2. Thao tác CLI
 
