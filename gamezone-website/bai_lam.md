@@ -1,0 +1,145 @@
+﻿# BÀI LÀM – THI THỬ HACKATHON 02 (GAMEZONE)
+
+- **Họ tên:** 
+- **Lớp:** 
+- **Link repository:** 
+- **Hệ điều hành (Windows/macOS):** 
+
+## 4.2. Thao tác CLI
+
+### Các lệnh đã chạy
+
+```PowerShell
+pwd
+ls -r -Force
+mv ".\cap_nhat.txt" ".\docs"
+mv ".\logo_gamezone.PNG" ".\media"
+cp ".\media\logo_gamezone.PNG" ".\backup"
+rm .\temp_207.tmp
+cd ".\logs" 
+ls
+cd..
+ls -Recurse -Force
+```
+
+### Kết quả liệt kê toàn bộ dự án
+
+```text
+Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/26/2026   1:14 PM                backup
+d-----        10/26/2026   1:16 PM                data
+d-----        10/26/2026   1:20 PM                docs
+d-----        10/26/2026   1:16 PM                logs
+d-----        10/26/2026   1:20 PM                media
+-a----        10/26/2026   1:10 PM             70 .env
+    Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website\backup
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/26/2026   1:10 PM           8542 logo_gamezone.PNG
+    Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website\data
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/26/2026   1:10 PM           5814 giao_dich_thang_11.xlsx
+    Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website\docs
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/26/2026   1:10 PM             61 cap_nhat.txt
+    Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website\logs
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/26/2026   1:10 PM            986 game.log
+    Directory: D:\Project_CNTT\testNMCNTT\de-on-tap-game\starter-kit\gamezone-website\media
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/26/2026   1:10 PM           8542 logo_gamezone.PNG
+
+```
+
+## 4.3. Lọc log thủ công
+
+### Lệnh đã chạy
+
+```PowerShell
+Get-Content ".\logs\game.log" | Select-String "error" >> ".\logs\daily_report.txt"
+
+```
+
+### 2 dòng lỗi đầu tiên trong daily_report.txt
+
+```text
+2025-11-05 08:03:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:09:15 [ERROR] Mat ket noi may chu game
+```
+
+## 4.4. README.md
+
+> Chấm trực tiếp trên `README.md` ở gốc dự án.
+
+- [x] Heading 1
+- [x] Mô tả in đậm + in nghiêng
+- [x] Bảng `Thư mục | Nội dung` (≥3 dòng)
+- [x] Code block lệnh liệt kê
+- [x] Task list (≥2 việc, ≥1 đã xong)
+- [x] Blockquote nhắc không upload `.env`
+
+## 4.5. Chạy script auto_report
+
+### Lệnh chạy
+
+```PowerShell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+y
+.\auto_report.ps1
+```
+
+### Nội dung file logs/auto_report.txt
+
+```text
+=== BAO CAO LOI GAMEZONE ===
+
+2025-11-05 08:03:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:09:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:12:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:39:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:42:15 [ERROR] Mat ket noi may chu game
+2025-11-05 08:51:15 [ERROR] Loi luu tien trinh choi
+```
+
+## 4.6. Đếm số dòng lỗi
+
+### Lệnh
+
+```PowerShell
+(Get-Content ".\logs\game.log" | Select-String "error").count
+```
+
+### Kết quả đếm
+
+```text
+6
+```
+
+## 4.7. Báo cáo tổng hợp
+
+### Các lệnh đã chạy
+
+```PowerShell
+.\tong_hop_logs.ps1
+```
+
+### Nội dung file logs/tong_hop.txt
+
+```text
+ === TONG HOP LOG GAMEZONE ===
+
+2025-11-05 08:54:15 [WARNING] May chu qua tai CPU 90%
+
+6
+
+```
+
+## 4.8. Excel
+
+> Chấm trực tiếp trên file `data/giao_dich_thang_11.xlsx`.

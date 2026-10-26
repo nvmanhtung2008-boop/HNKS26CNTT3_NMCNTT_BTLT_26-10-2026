@@ -1,0 +1,5 @@
+" === TONG HOP LOG GAMEZONE ===" >> ".\logs\tong_hop.txt"
+Write-Host "DANG TONG HOP"
+Get-Content ".\logs\game.log" | Select-String "warning" >> ".\logs\tong_hop.txt"
+(Get-Content ".\logs\game.log" | Select-String "error").count >> ".\logs\tong_hop.txt"
+Write-Host "DA LOC XONG"
